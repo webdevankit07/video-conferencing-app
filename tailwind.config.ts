@@ -19,7 +19,10 @@ const config = {
                     2: '#161925',
                 },
                 blue: {
-                    1: '#0E78F9',
+                    1: '#0e78f9',
+                },
+                sky: {
+                    1: '#c9ddff',
                 },
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
@@ -59,6 +62,9 @@ const config = {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)',
+            },
+            backgroundImage: {
+                hero: "url('/images/hero-background.png')",
             },
             keyframes: {
                 'accordion-down': {
