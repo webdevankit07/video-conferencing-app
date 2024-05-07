@@ -1,19 +1,23 @@
 'use client';
+import MeetingTypeList from '@/components/MeetingTypeList';
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
     const [time, setTime] = useState<string>('12:00 AM');
     const [date, setDate] = useState<string>('Sunday, 1 Jan, 2024');
 
-    useEffect(() => {
-        setTimeout(() => {
-            const now = new Date();
-            const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
-            const date = new Intl.DateTimeFormat('en-In', { dateStyle: 'full' }).format(now);
+    const updateTime = () => {
+        const now = new Date();
+        const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+        const date = new Intl.DateTimeFormat('en-IN', { dateStyle: 'full' }).format(now);
 
-            setTime(time);
-            setDate(date);
-        }, 1000);
+        setTime(time);
+        setDate(date);
+    };
+
+    useEffect(() => {
+        updateTime();
+        setInterval(updateTime, 60000);
     }, []);
 
     return (
@@ -29,6 +33,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <MeetingTypeList />
         </section>
     );
 };
