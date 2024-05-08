@@ -1,5 +1,5 @@
 ## 🚀 About Me
-Hi there I'm ANKIT YADAV a full stack developer with Reactjs, TypeScript, Nodejs, MongoDB
+Hi there I'm ANKIT YADAV a full stack developer with Nextjs and Reactjs, TypeScript, Nodejs, MongoDB.
 
 # YOOM - Video Conferencing App
 
@@ -54,8 +54,6 @@ Start server
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
-
-Frontend ENV:
 
 `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
 
