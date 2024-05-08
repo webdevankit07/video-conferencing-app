@@ -5,6 +5,7 @@ import Loader from './Loader';
 import { Call, CallRecording } from '@stream-io/video-react-sdk';
 import MeetingCard from './MeetingCard';
 import { useEffect, useState } from 'react';
+import { toast } from './ui/use-toast';
 
 const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
     const { endedCalls, isLoading, callRecordings, upcomingCalls } = useGetCalls();
@@ -39,9 +40,15 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
 
     useEffect(() => {
         const fetchRecordings = async () => {
-            const callData = await Promise.all(callRecordings?.map((meeting) => meeting.queryRecordings()) ?? []);
-            const recordings = callData.filter((call) => call.recordings.length > 0).flatMap((call) => call.recordings);
-            setRecordings(recordings);
+            try {
+                const callData = await Promise.all(callRecordings?.map((meeting) => meeting.queryRecordings()) ?? []);
+                const recordings = callData
+                    .filter((call) => call.recordings.length > 0)
+                    .flatMap((call) => call.recordings);
+                setRecordings(recordings);
+            } catch (error) {
+                toast({ title: 'Try again later' });
+            }
         };
 
         if (type === 'recordings') {
@@ -53,6 +60,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
     const noCallsMessage = getNoCallsMessage();
 
     if (isLoading) return <Loader />;
+    console.log({ recordings });
 
     return (
         <div className='grid grid-cols-1 gap-5 xl:grid-cols-2'>
@@ -70,7 +78,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                         title={
                             (meeting as Call).state?.custom?.description ||
                             (meeting as CallRecording).filename?.substring(0, 20) ||
-                            'No Description'
+                            'Personal Meeting'
                         }
                         date={
                             (meeting as Call).state?.startsAt?.toLocaleString() ||
