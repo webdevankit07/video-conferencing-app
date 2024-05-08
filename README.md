@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🚀 About Me
+Hi there I'm ANKIT YADAV a full stack developer with Reactjs, TypeScript, Nodejs, MongoDB
 
-## Getting Started
+# YOOM - Video Conferencing App
 
-First, run the development server:
+"YOOM" is a Video Conferencing App where Nextjs with TypeScript is used for the frontend, Clerk for the secured authentication, and stream.io for the robust video communication solutions.
+
+- Website Link :- https://webdevankit-zoom-clone.vercel.app/
+
+## Tech Stack
+**Client:** Nextjs, TypeScript,  TailwindCSS
+
+**Authentication:** Clerk
+
+**Video Comunication:** Stream.io
+
+## Optimizations
+
+
+- Crafted an intuitive and visually engaging frontend interface for seamless user interaction, leveraging Next.js with TypeScript.
+
+- Implemented Empowered seamless user authentication experiences with Clerk's robust and intuitive authentication system, ensuring secure access to the video conferencing application.
+
+ - Integrated Stream.io's robust video communication solutions to enable seamless real-time online conferencing functionalities, exemplifying prowess in third-party API integration for dynamic and interactive web applications.
+
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/webdevankit07/video-conferencing-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd video-conferencing-app
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install node_modules
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run this project, you will need to add the following environment variables to your .env file
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Frontend ENV:
+
+`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+
+`CLERK_SECRET_KEY`
+
+`NEXT_PUBLIC_CLERK_SIGN_IN_URL`
+
+`NEXT_PUBLIC_CLERK_SIGN_UP_URL`
+
+`NEXT_PUBLIC_STREAM_API_KEY`
+
+`STREAM_SECRET_KEY`
+
+`NEXT_PUBLIC_BASE_URL`
+
+
+## 🔗 Social Media Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/webdevankit/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/webdev_ankit)
+
+
+## Authors
+
+- [@webdevankit07](https://www.github.com/webdevankit07)
+
